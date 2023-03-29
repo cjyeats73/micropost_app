@@ -4,4 +4,7 @@ class MenuPagesController < ApplicationController
 
   def Help
   end
+  
+  def About
+  end
 end
