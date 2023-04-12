@@ -4,8 +4,10 @@ class MenuPagesController < ApplicationController
   end
 
   def Help
+    @title = "Help"
   end
   
   def About
+    @title = "About"
   end
 end
