@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
   resources :microposts
   resources :users
   get 'menu_pages/Home'
