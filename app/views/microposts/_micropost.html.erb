@@ -1,12 +1,9 @@
 <div id="<%= dom_id micropost %>">
-  <p>
-    <strong>Content:</strong>
+  <li>
+    <%= link_to gravatar_for(micropost.user), micropost.user %>
+    <%= link_to micropost.user.name, micropost.user %>
     <%= micropost.content %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= micropost.user_id %>
-  </p>
+    Posted <%= time_ago_in_words(micropost.created_at) %> ago
+  </li>
 
 </div>

@@ -4,6 +4,13 @@
 </h1>
 <%= render @user %>
 
+<% if @user.microposts.any? %>
+<h3>Microposts (<%= @user.microposts.count %>)</h3>
+<ol>
+  <%= render @microposts %>
+</ol>
+
+<% end %>
 <div>
   <%= link_to "Edit this user", edit_user_path(@user) %> |
   <%= link_to "Back to users", users_path %>
