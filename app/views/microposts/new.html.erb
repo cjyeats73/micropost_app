@@ -1,9 +1,13 @@
 <h1>New micropost</h1>
-
-<%= render "form", micropost: @micropost %>
-
+<%= form_with(model: @micropost) do |f| %>
+<div class="field">
+  <%= f.text_area :content, placeholder: "Compose new micropost..." %>
+  <br>
+  <%= f.hidden_field :user_id %>
+  </div>
+  <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>
 <br>
-
 <div>
-  <%= link_to "Back to microposts", microposts_path %>
+  <%= link_to "Back to users", users_path %>
 </div>

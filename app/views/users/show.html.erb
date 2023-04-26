@@ -17,7 +17,10 @@
       <h3>Microposts (<%= @user.microposts.count %>)</h3>
       <ol>
         <%= render @microposts %>
+        <%= link_to "delete", micropost, data:{ "turbo-method"::delete, turbo_confirm: "Are you sure?" } %>
       </ol>
+    <% end %>
+    <%= link_to "New post", new_micropost_path %>
   </div>
 </div>
 <% end %>

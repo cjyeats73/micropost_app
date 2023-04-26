@@ -3,7 +3,7 @@ class MicropostsController < ApplicationController
 
   # GET /microposts or /microposts.json
   def index
-    @microposts = Micropost.all
+    @micropost = Micropost.new
   end
 
   # GET /microposts/1 or /microposts/1.json
@@ -22,10 +22,12 @@ class MicropostsController < ApplicationController
   # POST /microposts or /microposts.json
   def create
     @micropost = Micropost.new(micropost_params)
+    @micropost.user_id = session[:user_id]
 
     respond_to do |format|
       if @micropost.save
-        format.html { redirect_to micropost_url(@micropost), notice: "Micropost was successfully created." }
+        format.html {redirect_to user_url{@micropost.user_id)}
+        # format.html { redirect_to micropost_url(@micropost), notice: "Micropost was successfully created." }
         format.json { render :show, status: :created, location: @micropost }
       else
         format.html { render :new, status: :unprocessable_entity }
