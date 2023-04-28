@@ -4,7 +4,8 @@
 
 <div id="microposts">
   <% @microposts.each do |micropost| %>
-    <%= render micropost %>
+    user: <%=micropost.user_id%>
+    post: <%=micropost.content%>
     <p>
       <%= link_to "Show this micropost", micropost %>
     </p>
