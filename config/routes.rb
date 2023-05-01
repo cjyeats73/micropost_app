@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :micropost_tags
+  resources :tags
   resources :categories
   resources :microposts
   resources :users
