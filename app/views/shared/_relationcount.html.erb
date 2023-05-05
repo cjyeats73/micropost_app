@@ -1,0 +1,15 @@
+@user= User.find_by_id(session[:user_id])
+<div class="stats">
+    <a href="<%= following_user_path(@user) %>">
+        <strong id="following" class="stat">
+            <%= @user.following.count %>
+        </strong>
+        following
+    </a>
+    <a href="<%= follower_user_path(@user) %>">
+        <strong id="follower" class="stat">
+            <%= @user.follower.count %>
+        </strong>
+        follower
+    </a>
+</div>
