@@ -12,8 +12,8 @@
     <%= button_to "Destroy this user", @user, method: :delete %>
   </div>
   
-  <%= render 'follow_form' if session[:user_id]=@user.id?%>
   <div class="col-md-8">
+    <%= render 'follow_form' if session[:user_id]=@user.id?%>
     <% if @user.microposts.any? %>
       <h3>Microposts (<%= @user.microposts.count %>)</h3>
       <ol>

@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   # GET /users/1 or /users/1.json
   def show
     @microposts = @user.microposts
+    @current_user = @user
     session[:user_id] = @user.id
   end
 
