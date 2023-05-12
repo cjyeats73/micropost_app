@@ -2,6 +2,8 @@
 
 <h1>Users</h1>
 
+<%= will_paginate %>
+<%= WillPaginate.per_page = 20 %>
 <div id="users">
   <% @users.each do |user| %>
     <li>
@@ -10,5 +12,6 @@
     </li>
   <% end %>
 </div>
+<%= will_paginate %>
 
 <%= link_to "New user", new_user_path %>
